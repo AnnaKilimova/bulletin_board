@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оголошення за останній місяць</title>
+</head>
+<body>
+    <h1>Оголошення, створені за останній місяць</h1>
+    <ul>
+        {% for ad in ads %}
+            <li>{{ ad.title }} - {{ ad.created_at }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

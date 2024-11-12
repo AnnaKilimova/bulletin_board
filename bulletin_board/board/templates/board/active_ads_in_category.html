@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Active Ads in {{ category_name }}</title>
+</head>
+<body>
+    <h1>Активні оголошення в категорії: {{ category_name }}</h1>
+
+    {% if ads %}
+        <ul>
+            {% for ad in ads %}
+                <li>
+                    <h2>{{ ad.title }}</h2>
+                    <p>{{ ad.description }}</p>
+                    <p><strong>Дата створення:</strong> {{ ad.created_at }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Немає активних оголошень у цій категорії.</p>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User's Ads from Last Month</title>
+</head>
+<body>
+    <h1>Оголошення користувача за останній місяць</h1>
+
+    {% if ads %}
+        <ul>
+            {% for ad in ads %}
+                <li>
+                    <h2>{{ ad.title }}</h2>
+                    <p>{{ ad.description }}</p>
+                    <p><strong>Дата створення:</strong> {{ ad.created_at }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>У цього користувача немає оголошень, створених за останній місяць.</p>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ads with Comment Count</title>
+</head>
+<body>
+    <h1>Оголошення з кількістю коментарів</h1>
+
+    {% if ads %}
+        <ul>
+            {% for ad in ads %}
+                <li>
+                    <h2>{{ ad.title }}</h2>
+                    <p>{{ ad.description }}</p>
+                    <p><strong>Дата створення:</strong> {{ ad.created_at }}</p>
+                    <p><strong>Кількість коментарів:</strong> {{ ad.comment_count }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Немає оголошень.</p>
+    {% endif %}
+
+</body>
+</html>
